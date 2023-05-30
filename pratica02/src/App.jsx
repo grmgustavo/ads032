@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
+import './App.css'
 
 import Home from "./pages/Home"
 import Novo from "./pages/Novo"
@@ -12,7 +13,6 @@ export default function App () {
         <Route Component={Layout}>
           <Route path="/" element={<Home />} />
           <Route path="/novo" element={<Novo />} />
-
           <Route path="*" element={<Erro404 />} />
         </Route>
       </Routes>

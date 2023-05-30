@@ -1,19 +1,18 @@
 import { createContext, useState } from 'react'
 
 const ContatosContext = createContext({
-    meusContatos: [
-    ],
-    incluirContato: () => { }
+    meusContatos: [],
+    incluirContato: () => { },
 }
 )
-
+export default ContatosContext
 
 // eslint-disable-next-line react/prop-types
 export function ContatosContextProvider ({ children }) {
     const [contatos, setContatos] = useState([])
 
-    const incluir = ({ nome, telefone }) => {
-        setContatos([...contatos, { nome, telefone }])
+    const incluir = (contato) => {
+        setContatos([...contatos, contato])
     }
 
     const contexto = {
@@ -22,10 +21,9 @@ export function ContatosContextProvider ({ children }) {
     }
 
 
-    return (<ContatosContext.Provider value={{ contexto }}>
-        {children}
-    </ContatosContext.Provider>
+    return (
+        <ContatosContext.Provider value={contexto}>
+            {children}
+        </ContatosContext.Provider>
     )
 }
-
-export default ContatosContext
