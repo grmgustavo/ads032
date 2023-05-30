@@ -1,5 +1,11 @@
+
 export default function Home () {
+
     return (
-        <h2>Meus contatos</h2>
+        <>
+            <h2>Meus contatos</h2>
+        </>
     )
+
+
 }
